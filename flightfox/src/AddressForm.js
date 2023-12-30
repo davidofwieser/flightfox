@@ -82,9 +82,9 @@ export default function AddressForm() {
             required
             id="country"
             name="country"
-            label="Country"
+            label="Land"
             fullWidth
-            autoComplete="Heimatland"
+            autoComplete="country"
             variant="standard"
           />
         </Grid>

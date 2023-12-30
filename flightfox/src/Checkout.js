@@ -19,6 +19,8 @@ import FlightTime from './FlightTime';
 import Airline from './Airline';
 import Reason from './Reason';
 import Review from './Review';
+import Check from './Check';
+import StepContent from '@mui/material/StepContent';
 
 
 function Copyright() {
@@ -34,7 +36,7 @@ function Copyright() {
   );
 }
 
-const steps = ['Flughafen', 'Abflugdatum', 'Abflugzeit', 'Flug', 'Grund', 'Adresse', 'Geld zurück', 'Review'];
+const steps = ['Flughafen', 'Flugdatum', 'Flugzeit', 'Flug', 'Begründung', 'Prüfung', 'Adresse', 'Zusammenfassung', 'Geld zurück'];
 
 function getStepContent(step) {
   switch (step) {
@@ -50,11 +52,14 @@ function getStepContent(step) {
     case 4:
       return <Reason />;           
     case 5:
-      return <AddressForm />;
+      return <Check />;                 
     case 6:
-      return <PaymentForm />;
+      return <AddressForm />;
     case 7:
       return <Review />;
+    case 8:
+      return <PaymentForm />;
+
     default:
       throw new Error('Unknown step');
   }
@@ -101,10 +106,10 @@ export default function Checkout() {
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length ? (
+                <StepContent>
+                  
+                  
+                {activeStep === steps.length ? (
             <React.Fragment>
               <Typography variant="h5" gutterBottom>
                 Thank you for your order.
@@ -117,8 +122,10 @@ export default function Checkout() {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {getStepContent(activeStep)}
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  {getStepContent(activeStep)}
+                
+                
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 {activeStep !== 0 && (
                   <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
                     Zurück            
@@ -132,9 +139,19 @@ export default function Checkout() {
                 >
                   {activeStep === steps.length - 1 ? 'Abschließen' : 'Weiter'}
                 </Button>
-              </Box>
+              </Box> 
             </React.Fragment>
-          )}
+          )}                  
+                  
+               
+                
+                
+                </StepContent>
+                
+              </Step>
+            ))}
+          </Stepper>
+
         </Paper>
         <Copyright />
       </Container>

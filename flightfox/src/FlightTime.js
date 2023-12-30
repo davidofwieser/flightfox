@@ -20,13 +20,6 @@ export default function FlightTime() {
               <TimePicker label="Abflugzeit" />
             </LocalizationProvider>
         </Grid>
-
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAirport" value="yes" />}
-            label="Abflugdatum fürs nächste mal merken"
-          />
-        </Grid>
       </Grid>
     </React.Fragment>
   );

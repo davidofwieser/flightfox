@@ -37,12 +37,6 @@ export default function Airline() {
           />
         </Grid>      
 
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAirport" value="yes" />}
-            label="Fluglinie (und Flugnummer) merken"
-          />
-        </Grid>
       </Grid>
     </React.Fragment>
   );
