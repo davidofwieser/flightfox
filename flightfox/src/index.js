@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import Checkout from './Checkout';
 import reportWebVitals from './reportWebVitals';
+import ButtonAppBar from './ButtonAppBar';
+import LinearWithValueLabel from './LinearWithValueLabel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ButtonAppBar />
+    <LinearWithValueLabel />
     <Checkout />
   </React.StrictMode>
 );

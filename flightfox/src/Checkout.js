@@ -21,6 +21,8 @@ import Reason from './Reason';
 import Review from './Review';
 import Check from './Check';
 import StepContent from '@mui/material/StepContent';
+import FlightTakeoffTwoToneIcon from '@mui/icons-material/FlightTakeoffTwoTone';
+import EuroTwoToneIcon from '@mui/icons-material/EuroTwoTone';
 
 
 function Copyright() {
@@ -67,37 +69,30 @@ function getStepContent(step) {
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  
 
   const handleNext = () => {
+    
     setActiveStep(activeStep + 1);
+    //localStorage.setItem('airportDeparture', airportDeparture);
+    //alert(localStorage.getItem('airportDeparture'))
   };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
+    
   };
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar
-        position="absolute"
-        color="default"
-        elevation={0}
-        sx={{
-          position: 'relative',
-          borderBottom: (t) => `1px solid ${t.palette.divider}`,
-        }}
-      >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            flightfox
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      
+
+      
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-            Geld zurück
+            Geld zurück <EuroTwoToneIcon />
           </Typography>
           <Typography component="h4" variant="h10" align="center">
             Reklamieren Sie einen weiteren Flug für ein Familienmitglied und sie profitieren sofort.
@@ -108,40 +103,40 @@ export default function Checkout() {
                 <StepLabel>{label}</StepLabel>
                 <StepContent>
                   
-                  
-                {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography variant="h5" gutterBottom>
-                Thank you for your order.
-              </Typography>
-              <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
-              </Typography>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-                  {getStepContent(activeStep)}
-                
-                
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                {activeStep !== 0 && (
-                  <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                    Zurück            
-                  </Button>
-                )}
+                          
+                        {activeStep === steps.length ? (
+                    <React.Fragment>
+                      <Typography variant="h5" gutterBottom>
+                        Thank you for your order.
+                      </Typography>
+                      <Typography variant="subtitle1">
+                        Your order number is #2001539. We have emailed your order
+                        confirmation, and will send you an update when your order has
+                        shipped.
+                      </Typography>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
 
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                  sx={{ mt: 3, ml: 1 }}
-                >
-                  {activeStep === steps.length - 1 ? 'Abschließen' : 'Weiter'}
-                </Button>
-              </Box> 
-            </React.Fragment>
-          )}                  
+                        {getStepContent(activeStep)}
+                                                
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        {activeStep !== 0 && (
+                          <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
+                            Zurück            
+                          </Button>
+                        )}
+
+                        <Button
+                          variant="contained"
+                          onClick={handleNext}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          {activeStep === steps.length - 1 ? 'Abschließen' : 'Weiter'}
+                        </Button>
+                      </Box> 
+                    </React.Fragment>
+                  )}                  
                   
                
                 
