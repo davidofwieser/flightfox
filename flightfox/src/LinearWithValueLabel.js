@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import FlightTakeoffTwoToneIcon from '@mui/icons-material/FlightTakeoffTwoTone';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 
+
 function LinearProgressWithLabel(props) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -45,6 +46,8 @@ export default function LinearWithValueLabel() {
 
   return (
 
+
+
 <Grid
   container
   spacing={0}
@@ -54,6 +57,11 @@ export default function LinearWithValueLabel() {
   //sx={{ minHeight: '100vh' }}
 >
   <Grid item xs={3}>
+
+  <div style={{ 
+      backgroundImage: `url("https://via.placeholder.com/500")` 
+    }}></div>
+
   <LinearProgressWithLabel value={progress} />
   </Grid>
 </Grid>
