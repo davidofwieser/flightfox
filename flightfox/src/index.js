@@ -27,6 +27,26 @@ root.render(
           </Typography>
 
     <Checkout />
+
+    <Typography component="h4" variant="h10" align="center">
+          <br></br> Fluglienien schütten gerne üppige Dividenden für ihre Aktionäre aus. <br></br> 
+          Flughlinien nehmen gerne bei Corona riesige Staatshilfen in Anspruch. <br></br> 
+          <br></br> 
+          </Typography>
+          <Typography component="h1" variant="h4" align="center">
+          Dabei nehmen Fluglinien gerne in Kauf,
+          </Typography>
+          <Typography component="h4" variant="h10" align="center">
+          <br></br> dass ihre Fluggäste Verspätungen und Ausfälle erdulden müssen.<br></br> 
+          Deswegen haben Sie als Passagier von der EU das Recht bekommen <br></br>für diese Verspätungen und Ausfälle entschädigt zu werden.
+          <br></br> 
+          <br></br> 
+          Holen Sie sich Ihr Geld jetzt gerne zurück.
+          <br></br> 
+          <br></br> 
+
+          </Typography>
+
   </React.StrictMode>
 );
 

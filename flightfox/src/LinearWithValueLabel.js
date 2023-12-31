@@ -4,6 +4,8 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import FlightTakeoffTwoToneIcon from '@mui/icons-material/FlightTakeoffTwoTone';
+import FlightLandIcon from '@mui/icons-material/FlightLand';
 
 function LinearProgressWithLabel(props) {
   return (
